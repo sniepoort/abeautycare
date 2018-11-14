@@ -1,0 +1,6 @@
+development:
+  password: c8044097360059cae49053fa7987ab33
+  theme_id: "32457064512"
+  store: a-beauty-care.myshopify.com
+  ignore_files:
+  - config/settings_data.json

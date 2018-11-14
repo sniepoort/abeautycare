@@ -1,0 +1,13 @@
+{
+  "name": "Abeautycare",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "slate start",
+    "watch": "slate watch",
+    "deploy": "slate deploy"
+  },
+  "devDependencies": {
+    "@shopify/slate-tools": "0.14.0"
+  }
+}
