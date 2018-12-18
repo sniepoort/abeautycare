@@ -108,6 +108,14 @@
           {%- endcapture -%}
           {{ taxes_shipping_checkout }}
         {% raw %}</p>
+
+
+        <div>
+          <input type="checkbox" class="terms-checkbox"></input>
+          <label for="terms-checkbox">Jeg accepterer <a class="js-terms-trigger" href="{% endraw %}{{pages['Handelsbetingelser'].url}}{% raw %}" data-mfp-src="#TermsModal">handelsbetingelserne</a> og <a class="js-environ-terms-trigger" href="{% endraw %}{{pages['Environ vilkår'].url}}{% raw %}">Environ vilkår</a></label>
+        </div>
+
+
         <button type="submit" class="btn--secondary btn--full cart__checkout" name="checkout">
           {% endraw %}{{ 'cart.general.checkout' | t }}{% raw %} <span class="icon icon-arrow-right" aria-hidden="true"></span>
         </button>

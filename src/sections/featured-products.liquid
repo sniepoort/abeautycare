@@ -41,14 +41,14 @@
           {% endif %}
           {% assign divisible_by_three__product = collection_product_count__product | modulo:3 %}
 
-          {% for product in collections[section.settings.home_featured_products].products %}
+          {% for product in collections[section.settings.home_featured_products].products limit: section.settings.home_featured_limit %}
             {% include 'product-grid-collage' %}
           {% endfor %}
 
         {% else %}
 
           {% assign grid_item_width = 'medium--one-half large--one-third' %}
-          {% for product in collections[section.settings.home_featured_products].products %}
+          {% for product in collections[section.settings.home_featured_products].products limit: section.settings.home_featured_limit %}
             {% include 'product-grid-item' %}
           {% endfor %}
 
@@ -107,6 +107,14 @@
         "ja": "コレクション",
         "pt-BR": "Coleção"
       }
+    },
+    {
+      "type": "number",
+      "id": "home_featured_limit",
+      "label": {
+        "en": "Limit"
+      },
+      "default": 5
     },
     {
       "type": "select",

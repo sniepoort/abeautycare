@@ -1006,7 +1006,6 @@ var ajaxCart = (function(module, $) {
   cartCallback = function(cart) {
     $body.removeClass('drawer--is-loading');
     $body.trigger('ajaxCart.afterCartLoad', cart);
-
     if (window.Shopify && Shopify.StorefrontExpressButtons) {
       Shopify.StorefrontExpressButtons.initialize();
     }
@@ -3472,4 +3471,61 @@ $(document).ready(function() {
   sections.register('password-content', theme.PasswordContent);
   sections.register('map', theme.Maps);
   sections.register('search', theme.Search);
+
+
+
+  //// CUSTOM
+  //////////////////////////////////////////////
+
+  var $checkoutButton = $('.cart__checkout')
+  var $termsCheckbox =
+  $checkoutButton.click(function(e){
+    var $termsCheckbox = $(this).parents('form').find('.terms-checkbox')
+    var isChecked = $termsCheckbox.prop('checked')
+    if (isChecked) {
+      $(this).submit()
+    } else {
+      // self.$cartForm.addClass('was-validated')
+      // self.$termsCheckbox[0].setCustomValidity('mising')
+      return false
+    }
+  })
+
+
+  $(document).on('click', '.js-terms-trigger', function(e){
+    console.log('click click')
+    e.preventDefault()
+    $(this).magnificPopup({
+      type: 'inline',
+      mainClass: 'mfp-fade',
+      closeOnBgClick: true,
+      closeBtnInside: false,
+      closeOnContentClick: false,
+      tClose: theme.strings.zoomClose,
+      alignTop: true,
+      removalDelay: 500
+    }).magnificPopup('open');
+  })
+  // $('.js-terms-trigger').magnificPopup({
+  //   type: 'inline',
+  //   mainClass: 'mfp-fade',
+  //   closeOnBgClick: true,
+  //   closeBtnInside: false,
+  //   closeOnContentClick: false,
+  //   tClose: theme.strings.zoomClose,
+  //   alignTop: true,
+  //   removalDelay: 500
+  // });
+  $('.js-environ-terms-trigger').magnificPopup({
+    type: 'inline',
+    mainClass: 'mfp-fade',
+    closeOnBgClick: true,
+    closeBtnInside: false,
+    closeOnContentClick: false,
+    tClose: theme.strings.zoomClose,
+    alignTop: true,
+    removalDelay: 500
+  });
+
+
 });
